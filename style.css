@@ -1,0 +1,209 @@
+body {
+  min-height: 100vh;
+  margin: 2vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 3vh;
+  background-color: rgb(151, 149, 149);
+  color: white;
+}
+
+.headerText {
+  font-size: 5vh;
+}
+
+.libraryLog {
+  width: 30vh;
+  border: solid;
+  border-color: white;
+  background-color: rgb(86, 50, 50);
+}
+
+.logHeader {
+  margin-bottom: 2vh;
+  text-align: center;
+}
+
+.logRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.readContainer {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1vh;
+  /* width: 40vh; */
+  background-color: rgb(243, 238, 238);
+}
+
+.read {
+  display: flex;
+
+  width: 20vh;
+  /* margin-right: 5vh; */
+}
+
+.notRead {
+  display: flex;
+  justify-content: space-between;
+  width: 20vh;
+}
+.readImage {
+  width: 5vh;
+  height: 2vh;
+}
+
+.readText {
+  margin-right: 2vh;
+}
+
+#read {
+  background-color: rgb(245, 130, 130);
+  border: solid;
+}
+
+#notRead {
+  background-color: rgb(248, 227, 227);
+  border: solid;
+}
+
+.bookContainer {
+  margin-top: 5vh;
+  display: flex;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  width: 33vh;
+  font-size: 2vh;
+  border: solid;
+  background-color: rgb(248, 227, 227);
+}
+
+.topBookRow {
+  display: flex;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 33vh;
+  float: right;
+  font-size: 2px;
+}
+.removeBook {
+  display: flex;
+  justify-content: flex-end;
+  height: 3vh;
+  font-size: 2vh;
+  /* position: absolute; */
+}
+
+.bookTitle {
+  margin-bottom: 2vh;
+  text-align: center;
+}
+
+.bookRow {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2vh;
+  padding-right: 2vh;
+}
+
+.toggleRow {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1vh;
+  padding-left: 1vh;
+  margin-top: 1vh;
+}
+
+/* theSwitch */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+  margin-left: 2vh;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #067124;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #067124;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(12px);
+  -ms-transform: translateX(12px);
+  transform: translateX(12px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 17px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.readColor {
+  background-color: rgb(245, 130, 130);
+}
+
+.notReadColor {
+  background-color: rgb(248, 227, 227);
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}

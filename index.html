@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bobrary</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="headerContainer">
+        <div class="headerText">Robert's Library</div>
+        <div class="libraryLog">
+          <div class="logHeader">Library Log</div>
+          <div class="logRow">
+            <div class="logRowText">Total Books:</div>
+            <div class="bookCount" id="totalCount">0</div>
+          </div>
+          <div class="logRow">
+            <div class="logRowText">Read:</div>
+            <div class="bookCount" id="readCount">0</div>
+          </div>
+          <div class="logRow">
+            <div class="logRowText">Not Read:</div>
+            <div class="bookCount" id="notReadCount">0</div>
+          </div>
+        </div>
+      </div>
+      <div class="readContainer">
+        <div class="read">
+          <div class="readText">Read</div>
+          <div class="readImage" id="read"></div>
+        </div>
+        <div class="notRead">
+          <div class="readText">Not Read</div>
+          <div class="readImage" id="notRead"></div>
+        </div>
+      </div>
+      <div class="bookContainer">
+        <div class="book" id="bookCard">
+          <div class="topBookRow">
+            <div class="button">
+              <button type="button" class="removeBook">X</button>
+            </div>
+          </div>
+          <div class="bookTitle">Eloquent JavaScript</div>
+          <div class="bookRow">
+            <div class="bookRowText">Author:</div>
+            <div class="author">Marijn Haverbeke</div>
+          </div>
+          <div class="bookRow">
+            <div class="bookRowText">Number of Pages:</div>
+            <div class="pages">450</div>
+          </div>
+          <div class="bookRow">
+            <div class="bookRowText">Language:</div>
+            <div class="language">English</div>
+          </div>
+          <div class="bookRow">
+            <div class="bookRowText">Year Published:</div>
+            <div class="language">2019</div>
+          </div>
+          <div class="toggleRow">
+            <div class="bookRowText" id="toggleText">Mark as Read</div>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <button class="newBookButton">+</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
