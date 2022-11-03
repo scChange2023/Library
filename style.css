@@ -1,12 +1,20 @@
+html {
+  height: 100%;
+}
 body {
-  min-height: 100vh;
-  margin: 2vh;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  width: 100vw;
 }
+
+/* Header styling */
 
 .headerContainer {
   display: flex;
@@ -20,11 +28,14 @@ body {
   font-size: 5vh;
 }
 
+/* Libray log inside header */
+
 .libraryLog {
-  width: 30vh;
+  width: 25vw;
   border: solid;
   border-color: white;
   background-color: rgb(86, 50, 50);
+  margin-right: 2%;
 }
 
 .logHeader {
@@ -35,7 +46,16 @@ body {
 .logRow {
   display: flex;
   justify-content: space-between;
+  margin-left: 20%;
+  margin-right: 20%;
 }
+
+.logRowText,
+.bookCount {
+  display: inline-block;
+}
+
+/* Read/Label container */
 
 .readContainer {
   display: flex;
@@ -76,36 +96,40 @@ body {
   border: solid;
 }
 
+/* Book Container  */
+
 .bookContainer {
   margin-top: 5vh;
   display: flex;
+  flex-wrap: wrap;
+  /* min-height: 30%; */
 }
+
+/* Book Card */
 
 .book {
   display: flex;
   flex-direction: column;
-  width: 33vh;
-  font-size: 2vh;
+  min-width: clamp(10%, 18%, 26%);
+  height: 8rem;
+  font-size: 1.7vh;
+  margin: 2%;
   border: solid;
   background-color: rgb(248, 227, 227);
+  box-sizing: content-box;
 }
 
 .topBookRow {
   display: flex;
+  width: 100%;
+  justify-content: flex-end;
 }
 
-.button {
+.removeBookButton {
   display: flex;
   justify-content: flex-end;
-  min-width: 33vh;
-  float: right;
-  font-size: 2px;
-}
-.removeBook {
-  display: flex;
-  justify-content: flex-end;
-  height: 3vh;
-  font-size: 2vh;
+  height: 1.3rem;
+  font-size: 1rem;
   /* position: absolute; */
 }
 
@@ -139,59 +163,10 @@ body {
   margin-left: 2vh;
 }
 
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
 /* The slider */
 .slider {
-  position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 12px;
-  width: 12px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: #067124;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #067124;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(12px);
-  -ms-transform: translateX(12px);
-  transform: translateX(12px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 17px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
 }
 
 .readColor {
@@ -202,8 +177,94 @@ input:checked + .slider:before {
   background-color: rgb(248, 227, 227);
 }
 
+/* Footer */
+
 .footer {
   display: flex;
+  position: sticky;
+  width: 90vw;
+  height: 100vh;
+  bottom: 1%;
+  /* left: 0; */
+  right: 0;
   justify-content: flex-end;
   align-items: flex-end;
+  /* height: 20%; */
+  margin: 3rem;
+  /* margin-bottom: 15rem; */
+}
+
+.newBookButton {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 20%;
+  font-size: 5rem;
+  cursor: pointer;
+  margin: 0.75rem;
+}
+
+.newBookButton:hover {
+  transform: scale(1.2);
+  background-color: green;
+  color: white;
+  /* margin-bottom: 5rem; */
+}
+
+/*Modal Form*/
+
+.modalForm {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* form */
+
+.form {
+  background-color: rgb(229, 171, 171);
+
+  position: fixed;
+  top: 20%;
+  left: 30%;
+  width: clamp(30%, 50%, 60%);
+  height: 40%;
+  white-space: nowrap;
+
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+
+legend {
+  margin-bottom: 1rem;
+}
+
+label {
+  width: clamp(20%, 30%, 40%);
+  text-align: start;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+  font-size: clamp(5px, 15px, 40px);
+}
+
+input {
+  border: none;
+
+  margin: 0;
+  width: 40%;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+  border: 1px solid black;
+}
+
+#submitButton {
+  border: 1px solid black;
+}
+
+#submitButton:active {
+  transform: scale(0.9);
 }

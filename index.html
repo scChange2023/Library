@@ -10,7 +10,7 @@
   <body>
     <div class="container">
       <div class="headerContainer">
-        <div class="headerText">Robert's Library</div>
+        <div class="headerText">Bob's Library</div>
         <div class="libraryLog">
           <div class="logHeader">Library Log</div>
           <div class="logRow">
@@ -40,38 +40,114 @@
       <div class="bookContainer">
         <div class="book" id="bookCard">
           <div class="topBookRow">
-            <div class="button">
-              <button type="button" class="removeBook">X</button>
-            </div>
+            <button type="button" class="removeBookButton">X</button>
           </div>
           <div class="bookTitle">Eloquent JavaScript</div>
           <div class="bookRow">
-            <div class="bookRowText">Author:</div>
-            <div class="author">Marijn Haverbeke</div>
+            <div class="bookRowLabel">Author:</div>
+            <div class="bookRowInput">Marijn Haverbeke</div>
           </div>
           <div class="bookRow">
-            <div class="bookRowText">Number of Pages:</div>
-            <div class="pages">450</div>
+            <div class="bookRowLabel">Number of Pages:</div>
+            <div class="bookRowInput">450</div>
           </div>
           <div class="bookRow">
-            <div class="bookRowText">Language:</div>
-            <div class="language">English</div>
+            <div class="bookRowLabel">Language:</div>
+            <div class="bookRowInput">English</div>
           </div>
           <div class="bookRow">
-            <div class="bookRowText">Year Published:</div>
-            <div class="language">2019</div>
+            <div class="bookRowLabel">Year Published:</div>
+            <div class="bookRowInput">2019</div>
           </div>
           <div class="toggleRow">
-            <div class="bookRowText" id="toggleText">Mark as Read</div>
-            <label class="switch">
-              <input type="checkbox" />
+            <div class="bookRowLabel">Mark as Read</div>
+            <label class="switch" id="readLabel">
+              <input type="checkbox" id="readInput" />
               <span class="slider round"></span>
             </label>
           </div>
         </div>
       </div>
       <div class="footer">
-        <button class="newBookButton">+</button>
+        <button type="button" class="newBookButton">+</button>
+      </div>
+      <div class="modalForm" id="modalForm">
+        <form class="form">
+          <!-- //MEthod=post -->
+          <legend>Add new book</legend>
+          <div class="formRow" id="title">
+            <label for="book_title">Book Title:</label>
+            <input
+              type="text"
+              id="book_title"
+              name="book_title"
+              placeholder="The Rise of the Dragon"
+              value="The Rise of the Dragon"
+              required
+            />
+          </div>
+          <div class="formRow" id="author">
+            <label for="book_author">Author:</label>
+            <input
+              type="text"
+              id="book_author"
+              name="author"
+              placeholder="George RR Martin"
+              value="George RR Martin"
+              required
+            />
+          </div>
+          <div class="formRow" id="pages">
+            <label for="book_pages">Number of Pages:</label>
+            <input
+              type="number"
+              id="book_pages"
+              name="pages"
+              placeholder="250"
+              value="250"
+              required
+            />
+          </div>
+          <div class="formRow" id="language">
+            <label for="book_language">Language:</label>
+            <input
+              type="text"
+              id="book_language"
+              name="language"
+              placeholder="english"
+              value="english"
+              required
+            />
+          </div>
+          <div class="formRow" id="year">
+            <label for="book_year">Year</label>
+            <input
+              type="number"
+              id="book_year"
+              name="year"
+              min="1000"
+              max="2022"
+              placeholder="2022"
+              value="2000"
+              required
+            />
+            <!-- <span></span> -->
+          </div>
+          <div class="formRow" id="read_div">
+            <label for="read_book">Have you read it?</label>
+            <input type="checkbox" id="read_book" name="read_book" />
+            <!-- <span></span> -->
+          </div>
+          <div class="formRow" id="submit_div">
+            <input
+              type="submit"
+              value="Send Request"
+              id="submitButton"
+              name="submitButton"
+            />
+            <!-- <span></span> -->
+          </div>
+        </form>
       </div>
     </div>
     <script src="script.js"></script>
