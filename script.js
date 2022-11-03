@@ -116,6 +116,7 @@ const rowLabelArray = [
   "Number of Pages:",
   "Language:",
   "Year Published:",
+  "Mark as Read",
 ];
 
 let rowInputArray = [];
@@ -145,7 +146,8 @@ function createBook() {
 
   Object.values(myLibrary[index]).forEach((val) => rowInputArray.push(val));
 
-  for (let i = 0; i <= rowLabelArray.length - 1; i++) {
+  //Not looping over rowLabelArray to include "MArk as read" as there is 1 toggle row
+  for (let i = 0; i <= rowLabelArray.length - 2; i++) {
     let bookRow = document.createElement("div");
     bookRow.classList.add("bookRow");
     book.appendChild(bookRow);
@@ -162,12 +164,31 @@ function createBook() {
   }
 
   rowInputArray = [];
-}
 
-///Mark as Read rowlabels
+  let toggleRow = document.createElement("div");
+  toggleRow.classList.add("toggleRow");
+  book.appendChild(toggleRow);
+
+  let toggleDiv = document.createElement("div");
+  toggleDiv.classList.add("bookRowLabel");
+  toggleRow.appendChild(toggleDiv);
+  toggleDiv.textContent = rowLabelArray[4];
+
+  let toggleLabel = document.createElement("label");
+  toggleLabel.classList.add("switch");
+  toggleLabel.setAttribute("id", "readLabel");
+  toggleRow.appendChild(toggleLabel);
+
+  let toggleInput = document.createElement("input");
+  toggleInput.setAttribute("type", "checkbox");
+  toggleInput.setAttribute("id", "readInput");
+  toggleLabel.appendChild(toggleInput);
+}
 
 //Form Reset button
 
 //Form cancel button
+
+//Delete Button
 
 //Styling

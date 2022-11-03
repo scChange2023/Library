@@ -253,10 +253,9 @@ label {
 
 input {
   border: none;
-
+  display: inline-block;
   margin: 0;
   width: 40%;
-  display: inline-block;
   margin-bottom: 0.3rem;
   border: 1px solid black;
 }
