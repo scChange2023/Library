@@ -59,7 +59,7 @@ const form = document.querySelector(".form");
 let modalDisplay = false;
 
 function openModal() {
-  modalDisplay = true;
+  // modalDisplay = true;
   modal.style.display = "block";
   console.log("Hello", modalDisplay);
 }
@@ -71,7 +71,8 @@ const submitButton = document.getElementById("submitButton");
 
 function closeModal() {
   document.querySelector(".modalForm").style.display = "none";
-  modalDisplay == false;
+  // modalDisplay == false;
+
   console.log("Bye", modalDisplay);
 }
 
@@ -83,7 +84,7 @@ modal.addEventListener("click", function (event) {
 
 //Create Object with form submission
 
-form.addEventListener("submit", callbackFunction);
+// form.addEventListener("submit", callbackFunction);
 
 // function callbackFunction(event) {
 //   event.preventDefault();
@@ -95,8 +96,8 @@ form.addEventListener("submit", callbackFunction);
 //   console.log(book);
 // }
 
-function callbackFunction(event) {
-  event.preventDefault();
+function callbackFunction() {
+  // event.preventDefault();
   let newBook = new Book(
     document.getElementById("book_title").value,
     document.getElementById("book_author").value,
@@ -116,6 +117,7 @@ const rowLabelArray = [
   "Number of Pages:",
   "Language:",
   "Year Published:",
+  "Mark as Read",
 ];
 
 let rowInputArray = [];
@@ -124,7 +126,7 @@ function createBook() {
   const bookContainer = document.querySelector(".bookContainer");
   let book = document.createElement("div");
   book.classList.add("book");
-  book.setAttribute("id", `${myLibrary.length}`);
+  book.setAttribute("id", `${myLibrary.length - 1}`);
   bookContainer.appendChild(book);
 
   let topBookRow = document.createElement("div");
@@ -145,7 +147,8 @@ function createBook() {
 
   Object.values(myLibrary[index]).forEach((val) => rowInputArray.push(val));
 
-  for (let i = 0; i <= rowLabelArray.length - 1; i++) {
+  //Not looping over rowLabelArray to include "MArk as read" as there is 1 toggle row
+  for (let i = 0; i <= rowLabelArray.length - 2; i++) {
     let bookRow = document.createElement("div");
     bookRow.classList.add("bookRow");
     book.appendChild(bookRow);
@@ -162,12 +165,39 @@ function createBook() {
   }
 
   rowInputArray = [];
+
+  let toggleRow = document.createElement("div");
+  toggleRow.classList.add("toggleRow");
+  book.appendChild(toggleRow);
+
+  let toggleDiv = document.createElement("div");
+  toggleDiv.classList.add("bookRowLabel");
+  toggleRow.appendChild(toggleDiv);
+  toggleDiv.textContent = rowLabelArray[4];
+
+  let toggleLabel = document.createElement("label");
+  toggleLabel.classList.add("switch");
+  toggleLabel.setAttribute("id", "readLabel");
+  toggleLabel.setAttribute("for", "readInput");
+  toggleRow.appendChild(toggleLabel);
+
+  let toggleInput = document.createElement("input");
+  toggleInput.setAttribute("type", "checkbox");
+  toggleInput.setAttribute("id", "readInput");
+  toggleInput.setAttribute("name", "readInput");
+  toggleLabel.appendChild(toggleInput);
+
+  let deleteBookButton = document.querySelectorAll(".removeBookButton");
 }
 
-///Mark as Read rowlabels
+let cancelFormButton = document.querySelector(".formCancelButton");
 
-//Form Reset button
+cancelFormButton.addEventListener("click", closeModal);
 
-//Form cancel button
+//Delete Button
 
-//Styling
+console.log(deleteBookButton);
+
+deleteBookButton.addEventListener("click", () => {
+  console.log("Hello");
+});
