@@ -60,11 +60,12 @@
             <div class="bookRowInput">2019</div>
           </div>
           <div class="toggleRow">
-            <div class="bookRowLabel">Mark as Read</div>
-            <label class="switch" id="readLabel">
-              <input type="checkbox" id="readInput" />
-              <span class="slider round"></span>
-            </label>
+            <!-- <div class="bookRowLabel">Mark as Read</div> -->
+
+            <label for="readInput" class="bookRowLabel" id="checkLabel"
+              >Mark as Read</label
+            >
+            <input type="checkbox" id="readInput" name="readInput" />
           </div>
         </div>
       </div>
@@ -72,9 +73,13 @@
         <button type="button" class="newBookButton">+</button>
       </div>
       <div class="modalForm" id="modalForm">
-        <form class="form">
+        <form class="form" onclick="callbackFunction" onsubmit="return false">
+          <!-- onsubmit="return false" -->
           <!-- //MEthod=post -->
-          <legend>Add new book</legend>
+          <div class="topFormRow">
+            <div class="formTitle">Add new book</div>
+            <button type="button" class="formCancelButton">X</button>
+          </div>
           <div class="formRow" id="title">
             <label for="book_title">Book Title:</label>
             <input
@@ -141,11 +146,12 @@
           <div class="formRow" id="submit_div">
             <input
               type="submit"
-              value="Send Request"
+              value="submit"
               id="submitButton"
               name="submitButton"
+              onclick="return callbackFunction()"
             />
-            <!-- <span></span> -->
+            <input type="reset" value="reset" id="resetButton" />
           </div>
         </form>
       </div>
