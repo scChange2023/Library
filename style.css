@@ -147,23 +147,43 @@ body {
 
 .toggleRow {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   padding-right: 1vh;
   padding-left: 1vh;
   margin-top: 1vh;
 }
 
+#checkLabel {
+  display: flex;
+  width: inherit;
+  justify-content: center;
+  font-size: inherit;
+  flex: 1;
+}
+
+#readInput {
+  display: flex;
+  width: inherit;
+  justify-content: flex-end;
+  flex: 1;
+}
+
 /* theSwitch */
 
-.switch {
+/* #readLabel {
   position: relative;
-  display: inline-block;
+  display: block;
   width: 30px;
   height: 17px;
   margin-left: 2vh;
-}
+} */
 
 /* The slider */
+
+input[type="checkbox"]:checked {
+  background-color: rgb(245, 130, 130);
+}
+
 .slider {
   cursor: pointer;
   background-color: #ccc;
@@ -239,8 +259,26 @@ body {
   border: 2px solid black;
 }
 
-legend {
+.topFormRow {
+  display: flex;
+  width: 100%;
   margin-bottom: 1rem;
+  flex-direction: row;
+}
+
+.formTitle {
+  justify-content: center;
+  flex: 1;
+}
+
+.formCancelButton {
+  margin-right: 1rem;
+}
+
+legend {
+  /* display: flex; */
+  margin-bottom: 1rem;
+  justify-content: center;
 }
 
 label {
@@ -253,10 +291,9 @@ label {
 
 input {
   border: none;
-
+  display: inline-block;
   margin: 0;
   width: 40%;
-  display: inline-block;
   margin-bottom: 0.3rem;
   border: 1px solid black;
 }
