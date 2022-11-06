@@ -20,7 +20,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 3vh;
-  background-color: rgb(151, 149, 149);
+  background: linear-gradient(rgba(40, 8, 8, 0.836), rgb(157, 153, 153));
   color: white;
 }
 
@@ -34,7 +34,7 @@ body {
   width: 25vw;
   border: solid;
   border-color: white;
-  background-color: rgb(86, 50, 50);
+  background-color: rgb(101, 34, 34);
   margin-right: 2%;
 }
 
@@ -147,23 +147,43 @@ body {
 
 .toggleRow {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   padding-right: 1vh;
   padding-left: 1vh;
   margin-top: 1vh;
 }
 
+#checkLabel {
+  display: flex;
+  width: inherit;
+  justify-content: center;
+  font-size: inherit;
+  flex: 1;
+}
+
+#readInput {
+  display: flex;
+  width: inherit;
+  justify-content: flex-end;
+  flex: 1;
+}
+
 /* theSwitch */
 
-.switch {
+/* #readLabel {
   position: relative;
-  display: inline-block;
+  display: block;
   width: 30px;
   height: 17px;
   margin-left: 2vh;
-}
+} */
 
 /* The slider */
+
+input[type="checkbox"]:checked {
+  background-color: rgb(245, 130, 130);
+}
+
 .slider {
   cursor: pointer;
   background-color: #ccc;
@@ -239,8 +259,29 @@ body {
   border: 2px solid black;
 }
 
-legend {
+.topFormRow {
+  display: flex;
+  width: 100%;
   margin-bottom: 1rem;
+  flex-direction: row;
+}
+
+.formTitle {
+  justify-content: center;
+  flex: 1;
+}
+
+.formCancelButton {
+  margin-right: 1rem;
+}
+
+#submit_div {
+  padding-top: 1rem;
+}
+legend {
+  /* display: flex; */
+  margin-bottom: 1rem;
+  justify-content: center;
 }
 
 label {
@@ -253,10 +294,9 @@ label {
 
 input {
   border: none;
-
+  display: inline-block;
   margin: 0;
   width: 40%;
-  display: inline-block;
   margin-bottom: 0.3rem;
   border: 1px solid black;
 }
@@ -265,6 +305,27 @@ input {
   border: 1px solid black;
 }
 
-#submitButton:active {
+#submitButton:hover,
+#resetButton:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.formCancelButton:active,
+.removeBookButton:active,
+#submitButton:active,
+#resetButton:active {
   transform: scale(0.9);
+  cursor: pointer;
+}
+
+#readInput:hover,
+.formCancelButton:hover,
+.removeBookButton:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.book:hover {
+  transform: scale(1.2);
 }

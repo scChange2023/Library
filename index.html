@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="bookContainer">
-        <div class="book" id="bookCard">
+        <!-- <div class="book" clas="readColor" id="bookCard">
           <div class="topBookRow">
             <button type="button" class="removeBookButton">X</button>
           </div>
@@ -61,20 +61,23 @@
           </div>
           <div class="toggleRow">
             <div class="bookRowLabel">Mark as Read</div>
-            <label class="switch" id="readLabel">
-              <input type="checkbox" id="readInput" />
-              <span class="slider round"></span>
+            <label for="readInput" class="bookRowLabel" id="checkLabel">
+              <input type="checkbox" id="readInput" name="readInput" />
             </label>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="footer">
         <button type="button" class="newBookButton">+</button>
       </div>
       <div class="modalForm" id="modalForm">
-        <form class="form">
+        <form class="form" onclick="callbackFunction" onsubmit="return false">
+          <!-- onsubmit="return false" -->
           <!-- //MEthod=post -->
-          <legend>Add new book</legend>
+          <div class="topFormRow">
+            <div class="formTitle">Add new book</div>
+            <button type="button" class="formCancelButton">X</button>
+          </div>
           <div class="formRow" id="title">
             <label for="book_title">Book Title:</label>
             <input
@@ -82,7 +85,6 @@
               id="book_title"
               name="book_title"
               placeholder="The Rise of the Dragon"
-              value="The Rise of the Dragon"
               required
             />
           </div>
@@ -93,7 +95,6 @@
               id="book_author"
               name="author"
               placeholder="George RR Martin"
-              value="George RR Martin"
               required
             />
           </div>
@@ -104,7 +105,6 @@
               id="book_pages"
               name="pages"
               placeholder="250"
-              value="250"
               required
             />
           </div>
@@ -115,7 +115,6 @@
               id="book_language"
               name="language"
               placeholder="english"
-              value="english"
               required
             />
           </div>
@@ -128,7 +127,6 @@
               min="1000"
               max="2022"
               placeholder="2022"
-              value="2000"
               required
             />
             <!-- <span></span> -->
@@ -141,11 +139,12 @@
           <div class="formRow" id="submit_div">
             <input
               type="submit"
-              value="Send Request"
+              value="submit"
               id="submitButton"
               name="submitButton"
+              onclick="return callbackFunction()"
             />
-            <!-- <span></span> -->
+            <input type="reset" value="reset" id="resetButton" />
           </div>
         </form>
       </div>
